@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="logoimage">
+        <img src="assets/logo.png" alt="" class="logo">
+    </div>
+    <h1 class="title">Login</h1>
+    <div class="form">
+        {{this.user | json}}
+        <form (ngSubmit)="login()">
+            <mat-form-field class="matformfield" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input [(ngModel)]="user.username" name="username" matInput placeholder="name" required="true"/>
+            </mat-form-field>
+
+            <mat-form-field class="matformfield" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="password" required="true"/>
+            </mat-form-field>
+            
+            <div class="formbuttons">
+                <button mat-raised-button type="submit" color="primary">Login</button>
+                <button mat-raised-button type="reset" color="warn">Clear</button>
+            </div>
+
+        </form>
+    </div>
+</div>

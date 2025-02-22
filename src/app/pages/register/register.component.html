@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="logoimage">
+        <img src="assets/logo.png" alt="" class="logo">
+    </div>
+    <h1 class="title">Register Here</h1>
+    <div class="form">
+        {{this.user | json}}
+        <form (ngSubmit)="registerFormSubmit($event)">
+            <mat-form-field class="matformfield" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input [(ngModel)]="user.userName" name="username" matInput placeholder="name" />
+            </mat-form-field>
+            <mat-form-field class="matformfield" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input [(ngModel)]="user.firstName" name="firstname" matInput placeholder="name" />
+            </mat-form-field>
+            <mat-form-field class="matformfield" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input [(ngModel)]="user.lastName" name="lastname" matInput placeholder="last name" />
+            </mat-form-field>
+            <mat-form-field class="matformfield" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input  [(ngModel)]="user.email" name="email" type="email" matInput placeholder="email" />
+            </mat-form-field>
+            <mat-form-field class="matformfield" appearance="outline">
+                <mat-label>Number</mat-label>
+                <input [(ngModel)]="user.phone" name="phone" type="number" matInput placeholder="phone" />
+            </mat-form-field>
+            <mat-form-field class="matformfield" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="password" />
+            </mat-form-field>
+            <div class="formbuttons">
+                <button mat-raised-button type="submit" color="primary">Register</button>
+                <button mat-raised-button type="reset" color="warn">Clear</button>
+            </div>
+
+        </form>
+    </div>
+</div>
