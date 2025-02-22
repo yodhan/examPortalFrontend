@@ -7,12 +7,13 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class UserserviceService {
+export class UserApiService {
 
   constructor(private http: HttpClient) { }
 
 public addUser(user:any):Observable<any>{
   return this.http.post(`${environment.apiBaseUrl}user/create-user`,user) 
 }
+
 
 }

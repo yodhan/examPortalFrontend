@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from '@app/models/user';
-import { UserserviceService } from '@app/service/userApi.service';
+import { UserApiService } from '@app/service/userApi.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class RegisterComponent {
 
-  constructor(private userService:UserserviceService, private snackbar:MatSnackBar){}
+  constructor(private userApiService:UserApiService, private snackbar:MatSnackBar){}
 
   public user:User ={
     userName:'',
@@ -34,7 +34,7 @@ export class RegisterComponent {
        )
        return
     }
-    this.userService.addUser(this.user).subscribe(
+    this.userApiService.addUser(this.user).subscribe(
       (data:any)=>{
         console.log(data);
         Swal.fire("Success done!!",'user'+ data.id + ' is registred',"success")
