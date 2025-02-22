@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '@app/models/user';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -15,6 +16,10 @@ export class LoginService {
     return this.http.post(`${environment.apiBaseUrl}generate-token`,loginData);
   }
 
+  public getCurrentUser(loginData:any):Observable<any>{
+    return this.http.get(`${environment.apiBaseUrl}current-user`);
+  }
+
   public saveToken(token:string){
     localStorage.setItem("token",token);
     return true;
@@ -27,6 +32,18 @@ export class LoginService {
     }
     return false;
   }
+
+  public logout(){
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    return true;
+  }
+
+  public getToken(){
+    return localStorage.getItem('token')
+  }
+
+  
 
 
 }

@@ -7,21 +7,27 @@ import { LoginService } from './login.service';
 })
 export class UserService {
 
-  constructor(private loginservice:LoginService) { }
+  constructor(private loginservice: LoginService) { }
 
-  public setUser(user:User |null){
+  public setUser(user: User | null) {
     localStorage.setItem("user", JSON.stringify(user));
   }
-  public getUser(){
-    let userStr =localStorage.getItem("user");
-    if(userStr!=null){
+
+  public getUser() {
+    let userStr = localStorage.getItem("user");
+    if (userStr != null) {
       return JSON.parse(userStr);
     } else {
       this.loginservice.logout();
       return null;
     }
+  }
+
+  public getUserRole(){
+    let user = this.getUser();
+    return user.authorities[0].authority;
 
   }
 
-  
+
 }

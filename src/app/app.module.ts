@@ -11,12 +11,15 @@ import { MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import { RegisterComponent } from './pages/register/register.component';
 import { FormsModule } from '@angular/forms';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { authInterceptorProviders } from './service/auth.interceptor';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { LoginComponent } from './pages/login/login.component';
   NavbarComponent,
   RegisterComponent,
   HomeComponent,
-  LoginComponent
+  LoginComponent,
+  DashboardComponent,
+  UserDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { LoginComponent } from './pages/login/login.component';
   providers: [
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
-    provideHttpClient()
+    provideHttpClient(withInterceptorsFromDi()),
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
