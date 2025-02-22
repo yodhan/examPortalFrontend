@@ -18,8 +18,9 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { authInterceptorProviders } from './service/auth.interceptor';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { ErrorComponent } from './pages/error/error/error.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
   HomeComponent,
   LoginComponent,
   DashboardComponent,
-  UserDashboardComponent
+  UserDashboardComponent,
+  ErrorComponent
   ],
   imports: [
     BrowserModule,
