@@ -21,6 +21,13 @@ import { authInterceptorProviders } from './service/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { ErrorComponent } from './pages/error/error/error.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule} from '@angular/material/list';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { MatCardModule} from '@angular/material/card';
+import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -31,7 +38,10 @@ import { ErrorComponent } from './pages/error/error/error.component';
   LoginComponent,
   DashboardComponent,
   UserDashboardComponent,
-  ErrorComponent
+  ErrorComponent,
+  ProfileComponent,
+  SidebarComponent,
+  AdminHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +53,11 @@ import { ErrorComponent } from './pages/error/error/error.component';
     FormsModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule,
+    MatTableModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),

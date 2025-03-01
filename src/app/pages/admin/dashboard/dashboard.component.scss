@@ -1,0 +1,13 @@
+.container {
+    height: 100vh;
+    display: flex;
+  }
+  .sidenav {
+    width: 26%;
+    background: #f4f4f4;
+    padding: 16px;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 16px;
+  }
