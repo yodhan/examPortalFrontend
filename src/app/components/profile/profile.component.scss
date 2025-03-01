@@ -1,0 +1,38 @@
+.container {
+    // height: 100vh;
+    width: 100%;
+    // display: flex;
+  }
+  .sidenav {
+    width: 26%;
+    background: #f4f4f4;
+    padding: 16px;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 16px;
+  }
+
+  .profile {
+    text-align: center;
+    img{
+      height: 250px;
+      margin: auto;
+    }
+  }
+
+  .updatebtn{
+    justify-content: center;
+  }
+
+  table{
+    width: 100%;
+    border: .5px solid white;
+    text-align: center;
+    border-collapse: collapse;
+
+    tr td {
+      padding: 10px 20px;
+      border: .5px solid white;
+    }
+  }

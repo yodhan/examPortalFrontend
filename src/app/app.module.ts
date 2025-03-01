@@ -18,8 +18,16 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { authInterceptorProviders } from './service/auth.interceptor';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { ErrorComponent } from './pages/error/error/error.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule} from '@angular/material/list';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { MatCardModule} from '@angular/material/card';
+import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,11 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
   HomeComponent,
   LoginComponent,
   DashboardComponent,
-  UserDashboardComponent
+  UserDashboardComponent,
+  ErrorComponent,
+  ProfileComponent,
+  SidebarComponent,
+  AdminHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +53,11 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     FormsModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule,
+    MatTableModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),
