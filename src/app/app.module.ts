@@ -28,6 +28,18 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { MatCardModule} from '@angular/material/card';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 import {MatTableModule} from '@angular/material/table';
+import { ViewCategoriesComponent } from './components/view-categories/view-categories.component';
+import { AddCategoriesComponent } from './components/add-categories/add-categories.component';
+import { AddQuizesComponent } from './components/add-quizes/add-quizes.component';
+import { ViewQuizesComponent } from './components/view-quizes/view-quizes.component';
+
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatDividerModule } from '@angular/material/divider';
+
+// import { MatSubheaderModule} from '@angular/material/sub'
 
 @NgModule({
   declarations: [
@@ -41,7 +53,12 @@ import {MatTableModule} from '@angular/material/table';
   ErrorComponent,
   ProfileComponent,
   SidebarComponent,
-  AdminHomeComponent
+  AdminHomeComponent,
+  ViewCategoriesComponent,
+  AddCategoriesComponent,
+  AddQuizesComponent,
+  ViewQuizesComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -57,7 +74,11 @@ import {MatTableModule} from '@angular/material/table';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatDividerModule,
+    MatSlideToggleModule,
+    MatCheckboxModule,
+    MatSelectModule,
   ],
   providers: [
     provideClientHydration(withEventReplay()),

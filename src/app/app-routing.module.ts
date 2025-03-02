@@ -9,6 +9,10 @@ import { ErrorComponent } from './pages/error/error/error.component';
 import { adminGuard } from './guard/admin.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
+import { ViewCategoriesComponent } from './components/view-categories/view-categories.component';
+import { ViewQuizesComponent } from './components/view-quizes/view-quizes.component';
+import { AddCategoriesComponent } from './components/add-categories/add-categories.component';
+import { AddQuizesComponent } from './components/add-quizes/add-quizes.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent, pathMatch: 'full' },
@@ -25,6 +29,22 @@ const routes: Routes = [
 				path:'profile',
 				component:ProfileComponent
 
+			},
+			{
+				path:"categories",
+				component:ViewCategoriesComponent
+			},
+			{
+				path:"quizes",
+				component:ViewQuizesComponent
+			},
+			{
+				path:"add-categories",
+				component:AddCategoriesComponent
+			},
+			{
+				path:"add-quizes",
+				component:AddQuizesComponent
 			}
 		]
 	},

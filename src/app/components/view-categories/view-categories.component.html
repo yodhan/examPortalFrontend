@@ -1,0 +1,17 @@
+<mat-card>
+	<mat-list>
+		<h2 class="subheaders" mat-subheader>All Categories</h2>
+        @for (c of categories; track c) {
+		<mat-list-item>
+            <mat-icon matListItemIcon>category</mat-icon>
+			<div  matListItemTitle>{{ c.title }}</div>
+			<div matListItemLine >{{ c.description }}</div>
+		</mat-list-item>
+        <mat-divider></mat-divider>
+    }
+	</mat-list>
+
+    <div class="container">
+        <button [routerLink]="['/admin/add-categories']" mat-raised-button>Add new category</button>
+    </div>
+</mat-card>
