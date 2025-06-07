@@ -38,7 +38,13 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { UpdateQuizComponent } from './components/update-quis/update-quiz/update-quiz.component';
+import { UpdateCategoryComponent } from './components/update-category/update-category/update-category.component';
+import { UpdateQuestionsComponent } from './components/update-questions/update-questions/update-questions.component';
+import { ViewQuestionsComponent } from './components/view-questions/view-questions.component';
+import { AddQuestionsComponent } from './components/add-questions/add-questions.component';
+import { EditQuestionsComponent } from './components/edit-questions/edit-questions.component';
+import { SidebarComponent as sidebarUser } from './pages/user/sidebar/sidebar.component';
 // import { MatSubheaderModule} from '@angular/material/sub'
 
 @NgModule({
@@ -58,6 +64,13 @@ import { MatDividerModule } from '@angular/material/divider';
   AddCategoriesComponent,
   AddQuizesComponent,
   ViewQuizesComponent,
+  UpdateQuizComponent,
+  UpdateCategoryComponent,
+  UpdateQuestionsComponent,
+  ViewQuestionsComponent,
+  AddQuestionsComponent,
+  EditQuestionsComponent,
+  sidebarUser,
   
   ],
   imports: [

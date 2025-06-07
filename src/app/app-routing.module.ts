@@ -13,6 +13,10 @@ import { ViewCategoriesComponent } from './components/view-categories/view-categ
 import { ViewQuizesComponent } from './components/view-quizes/view-quizes.component';
 import { AddCategoriesComponent } from './components/add-categories/add-categories.component';
 import { AddQuizesComponent } from './components/add-quizes/add-quizes.component';
+import { UpdateQuizComponent } from './components/update-quis/update-quiz/update-quiz.component';
+import { UpdateQuestionsComponent } from './components/update-questions/update-questions/update-questions.component';
+import { ViewQuestionsComponent } from './components/view-questions/view-questions.component';
+import { AddQuestionsComponent } from './components/add-questions/add-questions.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent, pathMatch: 'full' },
@@ -45,6 +49,26 @@ const routes: Routes = [
 			{
 				path:"add-quizes",
 				component:AddQuizesComponent
+			},
+			{
+				path:"add-questions/:qId",
+				component:AddQuestionsComponent
+			},
+			{
+				path:"update-quiz/:qid",
+				component:UpdateQuizComponent
+			},
+			{
+				path:"questions/:qId/:title",
+				component: ViewQuestionsComponent
+			},
+			{
+				path:"update-question",
+				component:UpdateQuestionsComponent
+			},
+			{
+				path:"update-category",
+				component:UpdateQuestionsComponent
 			}
 		]
 	},

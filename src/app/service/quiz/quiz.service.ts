@@ -15,13 +15,22 @@ export class QuizService {
      return this.http.get(`${environment.apiBaseUrl}quiz/`);
   }
 
+  public getQuiz(qid:any){
+    return this.http.get(`${environment.apiBaseUrl}quiz/${qid}`);
+  }
+
   public createQuiz(quizData:any){
     return this.http.post(`${environment.apiBaseUrl}quiz/`,quizData);
   }
+
   public deleteeQuiz(qid:any){
     console.log(qid);
     
     return this.http.delete(`${environment.apiBaseUrl}quiz/${qid}`);
+  }
+
+  public updateQuiz(qid:any){
+    return this.http.put(`${environment.apiBaseUrl}quiz/`,qid);
   }
 
 
