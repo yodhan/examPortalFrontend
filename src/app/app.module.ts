@@ -45,6 +45,7 @@ import { ViewQuestionsComponent } from './components/view-questions/view-questio
 import { AddQuestionsComponent } from './components/add-questions/add-questions.component';
 import { EditQuestionsComponent } from './components/edit-questions/edit-questions.component';
 import { SidebarComponent as sidebarUser } from './pages/user/sidebar/sidebar.component';
+import { LoadquizComponent } from './pages/user/loadquiz/loadquiz.component';
 // import { MatSubheaderModule} from '@angular/material/sub'
 
 @NgModule({
@@ -71,6 +72,7 @@ import { SidebarComponent as sidebarUser } from './pages/user/sidebar/sidebar.co
   AddQuestionsComponent,
   EditQuestionsComponent,
   sidebarUser,
+  LoadquizComponent,
   
   ],
   imports: [

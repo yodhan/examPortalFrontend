@@ -17,6 +17,7 @@ import { UpdateQuizComponent } from './components/update-quis/update-quiz/update
 import { UpdateQuestionsComponent } from './components/update-questions/update-questions/update-questions.component';
 import { ViewQuestionsComponent } from './components/view-questions/view-questions.component';
 import { AddQuestionsComponent } from './components/add-questions/add-questions.component';
+import { LoadquizComponent } from './pages/user/loadquiz/loadquiz.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent, pathMatch: 'full' },
@@ -73,12 +74,58 @@ const routes: Routes = [
 		]
 	},
 	{
-		path: 'user-dashboard',
-		component: UserDashboardComponent,
-		pathMatch: 'full',
+		path: 'user',component: UserDashboardComponent,
+		children:[
+			
+			{
+				path:'profile',
+				component:ProfileComponent
+
+			},
+			{
+				path:"categories",
+				component:ViewCategoriesComponent
+			},
+			{
+				path:"quizes",
+				component:ViewQuizesComponent
+			},
+			{
+				path:"add-categories",
+				component:AddCategoriesComponent
+			},
+			{
+				path:"add-quizes",
+				component:AddQuizesComponent
+			},
+			{
+				path:"add-questions/:qId",
+				component:AddQuestionsComponent
+			},
+			{
+				path:"update-quiz/:qid",
+				component:UpdateQuizComponent
+			},
+			{
+				path:"questions/:qId/:title",
+				component: ViewQuestionsComponent
+			},
+			{
+				path:"update-question",
+				component:UpdateQuestionsComponent
+			},
+			{
+				path:"update-category",
+				component:UpdateQuestionsComponent
+			},
+			{
+				path:':catId',
+				component:LoadquizComponent
+			}
+		]
 	},
 	{ path: 'error', component: ErrorComponent },
-	{ path: 'profile', component: ProfileComponent, pathMatch: 'full' },
+	// { path: 'profile', component: ProfileComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

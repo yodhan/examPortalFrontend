@@ -1,0 +1,18 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: flex-start;
+}
+
+.quiz-card {
+flex: 0 0 calc(33.333% - 14px);
+min-width: 250px; /* Prevent cards from becoming too narrow on smaller screens */
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width */
+  margin-bottom: 10px; /* Optional: adds a little space below each card row */
+  height: 120px; /* Fixed height for consistent look, adjust as needed */
+  display: flex; /* Use flexbox within the card for title centering/alignment */
+  flex-direction: column;
+  justify-content: center; /* Vertically center the title */
+  align-items: center; /* Horizontally center the title */
+}

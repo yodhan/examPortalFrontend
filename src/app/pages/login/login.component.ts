@@ -23,6 +23,7 @@ export class LoginComponent {
 	}
 	login() {
 		if (this.user.userName != "" && this.user.password != "") {
+			this.loginService.logout();
 			this.loginService.generateToken(this.user).subscribe((data) => {
 				
 				this.loginService.saveToken(data.token);
@@ -32,7 +33,7 @@ export class LoginComponent {
 						if(this.userService.getUserRole()=="ADMIN"){
 							this.route.navigate(['/admin']);
 						}else if(this.userService.getUserRole()=="NORMAL"){ 
-							this.route.navigate(['/user-dashboard']);
+							this.route.navigate(['/user/0']);
 						}else {
 							this.loginService.logout();
 							// location.reload();

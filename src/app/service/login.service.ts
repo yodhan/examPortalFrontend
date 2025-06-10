@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class LoginService {
 
   constructor(private http:HttpClient) { }
-
+  t=""
 
   public generateToken(loginData:any):Observable<any>{
     return this.http.post(`${environment.apiBaseUrl}generate-token`,loginData);
@@ -22,6 +22,7 @@ export class LoginService {
 
   public saveToken(token:string){
     localStorage.setItem("token",token);
+    this.t=token
     return true;
   }
 
@@ -40,6 +41,10 @@ export class LoginService {
   }
 
   public getToken(){
+    if (this.t){
+      return this.t;
+    }
+    console.log(this.t)
     return localStorage.getItem('token')
   }
 
