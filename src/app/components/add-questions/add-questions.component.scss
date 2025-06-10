@@ -1,0 +1,10 @@
+
+.full-width {
+  width: 100%;
+}
+.grid-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}

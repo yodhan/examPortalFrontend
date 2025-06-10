@@ -1,0 +1,80 @@
+<div class="wrapper">
+    <div class="container">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-subtitle>
+            Enter the details of the new Question
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <form (ngSubmit)="addQuestions()">
+            <!-- Question Content -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Enter Question Content</mat-label>
+              <textarea
+                rows="8"
+                placeholder="Enter the content here"
+                matInput
+                [(ngModel)]="question.content"
+                name="content">
+              </textarea>
+            </mat-form-field>
+  
+            <!-- Grid container for options -->
+            <div class="grid-options">
+              <mat-form-field appearance="outline">
+                <mat-label>Enter option 1</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  [(ngModel)]="question.option1"
+                  name="option1">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Enter option 2</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  [(ngModel)]="question.option2"
+                  name="option2">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Enter option 3</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  [(ngModel)]="question.option3"
+                  name="option3">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Enter option 4</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  [(ngModel)]="question.option4"
+                  name="Option4">
+              </mat-form-field>
+            </div>
+  
+            <!-- Answer Selection -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Select Answer</mat-label>
+              <mat-select [(ngModel)]="question.answer" name="answer">
+                <mat-option [value]="question.option1">Option 1</mat-option>
+                <mat-option [value]="question.option2">Option 2</mat-option>
+                <mat-option [value]="question.option3">Option 3</mat-option>
+                <mat-option [value]="question.option4">Option 4</mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+            <!-- Submit Button -->
+            <button mat-raised-button color="primary" type="submit">
+              Submit
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  
+  

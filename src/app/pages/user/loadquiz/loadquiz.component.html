@@ -1,0 +1,19 @@
+
+<div class="wrapper">
+    <div class="container">
+        <h2>Available Quizzes</h2>
+        
+        <div class="row">
+            <mat-card class="quiz-card" *ngFor="let quiz of quizes">
+                <mat-card-header>
+                    <mat-card-title>
+                        {{quiz.title}}
+                    </mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    </div>
+     <div *ngIf="quizes?.length === 0" class="no-quizzes-message">
+    <p>No quizzes available yet. Please check back later!</p>
+  </div>
+</div>

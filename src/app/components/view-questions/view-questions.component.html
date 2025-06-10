@@ -1,0 +1,29 @@
+<h3 class="title">Questions of {{ qTitle }}</h3>
+
+<div class="wrapper">
+	<div class="container">
+		<div class="buttoncontanier">
+			<button [routerLink]="'/admin/add-questions/'+ qId" >Add Questions</button>
+		</div>
+		<mat-card *ngFor="let q of questions; let i = index">
+			<mat-card-content>
+				<p>Q {{ i + 1 }} <span [innerHTML]="q.content"></span></p>
+                <mat-divider></mat-divider>
+				<div class="container fluid">
+					<div class="row">
+						<table>
+							<tr>
+								<td>1. {{q.option1}}</td>
+								<td>2. {{q.option2}}</td>
+							</tr>
+							<tr>
+								<td>3. {{q.option3}}</td>
+								<td>4. {{q.option4}}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+
+@for (quiz of quizzes; track $index) {
+    {{quiz | json }}
+<mat-card class="mat-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>
+            {{quiz.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{quiz?.category?.title}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{quiz.description}}</p>
+    </mat-card-content>
+    <mat-card-actions class="quiz-buttons">
+        <button mat-stroked-button color="accent"> Max Marks: {{quiz.maxMarks}}</button>
+        <button mat-stroked-button color="accent"> No of Questions: {{quiz.numberOfQuestions}}</button>
+        <button mat-stroked-button color="accent"> Max Marks: {{quiz.maxMarks}}</button>
+        <button mat-flat-button color="warn"  [routerLink]="'/admin/questions/'+quiz.qid+'/' +quiz.title"> Questions</button>
+        <button mat-flat-button color="accent">  Attempts </button>
+        <button mat-flat-button color="accent" [routerLink]="'/admin/update-quiz/'+quiz.qid">  Update </button>
+        <button mat-flat-button color="warn" (click)="deleteQuiz(quiz.qid)">  Delete </button>
+        
+    </mat-card-actions>
+</mat-card>
+}
+
+<div class="container">
+    <button [routerLink]="['/admin/add-quizes']" mat-raised-button>Add new Quiz</button>
+</div>
