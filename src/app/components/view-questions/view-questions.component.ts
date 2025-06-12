@@ -10,7 +10,7 @@ import { QuestionService } from '@app/service/question/question.service';
 })
 export class ViewQuestionsComponent {
   constructor(private route:ActivatedRoute, private question:QuestionService){}
-  qId:any;
+  qid:any;
   qTitle:any;
   questions=[
     {
@@ -25,11 +25,11 @@ export class ViewQuestionsComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-   this.qId = this.route.snapshot.params['qId'];
+   this.qid = this.route.snapshot.params['qid'];
    this.qTitle = this.route.snapshot.params['title'];
    console.log(this.route.snapshot.params);
    
-   this.question.getQuestionsOfQuiz(this.qId).subscribe((data:any)=>{
+   this.question.getQuestionsOfQuiz(this.qid).subscribe((data:any)=>{
     this.questions=data;
     console.log(data);
     

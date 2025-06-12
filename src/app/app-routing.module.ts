@@ -18,111 +18,122 @@ import { UpdateQuestionsComponent } from './components/update-questions/update-q
 import { ViewQuestionsComponent } from './components/view-questions/view-questions.component';
 import { AddQuestionsComponent } from './components/add-questions/add-questions.component';
 import { LoadquizComponent } from './pages/user/loadquiz/loadquiz.component';
+import { InstructionsComponent } from './pages/instructions/instructions.component';
+import { StartComponent } from './pages/user/start/start.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent, pathMatch: 'full' },
 	{ path: 'register', component: RegisterComponent, pathMatch: 'full' },
 	{ path: 'login', component: LoginComponent, pathMatch: 'full' },
 	// { path: 'admin', component: DashboardComponent, pathMatch: 'full', canActivate:[adminGuard],
-	{ path: 'admin', component: DashboardComponent,
-		children:[
+	{
+		path: 'admin',
+		component: DashboardComponent,
+		children: [
 			{
-				path:"",
-				component:AdminHomeComponent
+				path: '',
+				component: AdminHomeComponent,
 			},
 			{
-				path:'profile',
-				component:ProfileComponent
-
+				path: 'profile',
+				component: ProfileComponent,
 			},
 			{
-				path:"categories",
-				component:ViewCategoriesComponent
+				path: 'categories',
+				component: ViewCategoriesComponent,
 			},
 			{
-				path:"quizes",
-				component:ViewQuizesComponent
+				path: 'quizes',
+				component: ViewQuizesComponent,
 			},
 			{
-				path:"add-categories",
-				component:AddCategoriesComponent
+				path: 'add-categories',
+				component: AddCategoriesComponent,
 			},
 			{
-				path:"add-quizes",
-				component:AddQuizesComponent
+				path: 'add-quizes',
+				component: AddQuizesComponent,
 			},
 			{
-				path:"add-questions/:qId",
-				component:AddQuestionsComponent
+				path: 'add-questions/:qid',
+				component: AddQuestionsComponent,
 			},
 			{
-				path:"update-quiz/:qid",
-				component:UpdateQuizComponent
+				path: 'update-quiz/:qid',
+				component: UpdateQuizComponent,
 			},
 			{
-				path:"questions/:qId/:title",
-				component: ViewQuestionsComponent
+				path: 'questions/:qid/:title',
+				component: ViewQuestionsComponent,
 			},
 			{
-				path:"update-question",
-				component:UpdateQuestionsComponent
+				path: 'update-question',
+				component: UpdateQuestionsComponent,
 			},
 			{
-				path:"update-category",
-				component:UpdateQuestionsComponent
-			}
-		]
+				path: 'update-category',
+				component: UpdateQuestionsComponent,
+			},
+		],
 	},
 	{
-		path: 'user',component: UserDashboardComponent,
-		children:[
-			
+		path: 'user',
+		component: UserDashboardComponent,
+		children: [
 			{
-				path:'profile',
-				component:ProfileComponent
+				path: 'profile',
+				component: ProfileComponent,
+			},
+			{
+				path: 'instructions/:qid',
+				component: InstructionsComponent,
+			},
+			{
+				path: 'categories',
+				component: ViewCategoriesComponent,
+			},
+			{
+				path: 'quizes',
+				component: ViewQuizesComponent,
+			},
+			{
+				path: 'add-categories',
+				component: AddCategoriesComponent,
+			},
+			{
+				path: 'add-quizes',
+				component: AddQuizesComponent,
+			},
+			{
+				path: 'add-questions/:qid',
+				component: AddQuestionsComponent,
+			},
+			{
+				path: 'update-quiz/:qid',
+				component: UpdateQuizComponent,
+			},
+			{
+				path: 'questions/:qid/:title',
+				component: ViewQuestionsComponent,
+			},
+			{
+				path: 'update-question',
+				component: UpdateQuestionsComponent,
+			},
+			{
+				path: 'update-category',
+				component: UpdateQuestionsComponent,
+			},
+			{
+				path: ':catId',
+				component: LoadquizComponent,
+			},
+		],
+	},
 
-			},
-			{
-				path:"categories",
-				component:ViewCategoriesComponent
-			},
-			{
-				path:"quizes",
-				component:ViewQuizesComponent
-			},
-			{
-				path:"add-categories",
-				component:AddCategoriesComponent
-			},
-			{
-				path:"add-quizes",
-				component:AddQuizesComponent
-			},
-			{
-				path:"add-questions/:qId",
-				component:AddQuestionsComponent
-			},
-			{
-				path:"update-quiz/:qid",
-				component:UpdateQuizComponent
-			},
-			{
-				path:"questions/:qId/:title",
-				component: ViewQuestionsComponent
-			},
-			{
-				path:"update-question",
-				component:UpdateQuestionsComponent
-			},
-			{
-				path:"update-category",
-				component:UpdateQuestionsComponent
-			},
-			{
-				path:':catId',
-				component:LoadquizComponent
-			}
-		]
+	{
+		path: 'start/:qid',
+		component: StartComponent,
 	},
 	{ path: 'error', component: ErrorComponent },
 	// { path: 'profile', component: ProfileComponent, pathMatch: 'full' },

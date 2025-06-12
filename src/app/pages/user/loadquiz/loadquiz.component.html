@@ -2,14 +2,26 @@
 <div class="wrapper">
     <div class="container">
         <h2>Available Quizzes</h2>
-        
+
         <div class="row">
             <mat-card class="quiz-card" *ngFor="let quiz of quizes">
                 <mat-card-header>
                     <mat-card-title>
                         {{quiz.title}}
                     </mat-card-title>
+                    <mat-card-subtitle>
+                        {{ quiz.category.title}}
+                    </mat-card-subtitle>
                 </mat-card-header>
+                <mat-card-content>
+                    <p class="desc">{{quiz.description}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">View</button>
+                    <button mat-raised-button color="accent" [routerLink]="'/user/instructions/'+quiz.qid">start</button>
+                    <button mat-button color="accent">Questions: {{quiz.numberOfQuestions}}</button>
+                    <button mat-button color="accent">Marks: {{quiz.maxMarks}}</button>
+                </mat-card-actions>
             </mat-card>
         </div>
     </div>

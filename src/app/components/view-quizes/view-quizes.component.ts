@@ -45,7 +45,7 @@ export class ViewQuizesComponent {
 		);
 	}
 
-	deleteQuiz(qId: any) {
+	deleteQuiz(qid: any) {
 		Swal.fire({
 			icon: 'info',
 			title: 'Are you sure?',
@@ -53,10 +53,10 @@ export class ViewQuizesComponent {
 			showCancelButton: true,
 		}).then((result) => {
 			if (result.isConfirmed) {
-				this.quizService.deleteeQuiz(qId).subscribe(
+				this.quizService.deleteeQuiz(qid).subscribe(
 					(data) => {
 						console.log(data);
-						this.quizzes.filter((quiz) => quiz.qid != qId);
+						this.quizzes.filter((quiz) => quiz.qid != qid);
 					},
 					(error) => {
 						console.log(error);
@@ -64,6 +64,6 @@ export class ViewQuizesComponent {
 				);
 			}
 		});
-		console.log(qId);
+		console.log(qid);
 	}
 }

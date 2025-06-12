@@ -11,7 +11,7 @@
             <mat-icon >quiz</mat-icon> All quizes
         </button>
         
-        <button mat-list-item *ngFor="let c of categories">
+        <button mat-list-item [routerLink]="'/user/'+c.cid" *ngFor="let c of categories">
             <mat-icon >list</mat-icon> {{c.title}}
         </button>
         
