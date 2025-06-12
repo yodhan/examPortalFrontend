@@ -19,10 +19,12 @@ export class LoadquizComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.catId= this._route.snapshot.params['catId'];
+    this._route.paramMap.subscribe(params=>{
+      
+    this.catId= Number(params.get("catId"));
     console.log(this.catId);
     if (this.catId==0){
-      this.quizService.getquizess().subscribe((data)=>{
+      this.quizService.getActivequizess().subscribe((data)=>{
         console.log(data)
         this.quizes=data;
       },
@@ -32,8 +34,21 @@ export class LoadquizComponent {
     })
     } else {
       // this.quizService.get
+      console.log("vgbgc");
+      
+      this.quizService.getActiveQuizOfCategory(this.catId).subscribe((data)=>{
+        console.log(data)
+        this.quizes=data;
+      },
+    (error)=>{
+      console.log(error);
+      
+    })
 
     }
+    }
+
+    )
   }
 
 }

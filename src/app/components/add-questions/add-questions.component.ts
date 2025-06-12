@@ -29,7 +29,7 @@ export class AddQuestionsComponent implements OnInit {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.qid = this.activated.snapshot.params["qId"];
+    this.qid = this.activated.snapshot.params["qid"];
     this.question.quiz.qid=this.qid
     console.log(this.qid);
     

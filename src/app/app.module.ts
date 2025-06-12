@@ -37,6 +37,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatDividerModule } from '@angular/material/divider';
 import { UpdateQuizComponent } from './components/update-quis/update-quiz/update-quiz.component';
 import { UpdateCategoryComponent } from './components/update-category/update-category/update-category.component';
@@ -46,6 +47,9 @@ import { AddQuestionsComponent } from './components/add-questions/add-questions.
 import { EditQuestionsComponent } from './components/edit-questions/edit-questions.component';
 import { SidebarComponent as sidebarUser } from './pages/user/sidebar/sidebar.component';
 import { LoadquizComponent } from './pages/user/loadquiz/loadquiz.component';
+import { InstructionsComponent } from './pages/instructions/instructions.component';
+import { StartComponent } from './pages/user/start/start.component';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 // import { MatSubheaderModule} from '@angular/material/sub'
 
 @NgModule({
@@ -73,6 +77,8 @@ import { LoadquizComponent } from './pages/user/loadquiz/loadquiz.component';
   EditQuestionsComponent,
   sidebarUser,
   LoadquizComponent,
+  InstructionsComponent,
+  StartComponent,
   
   ],
   imports: [
@@ -81,6 +87,7 @@ import { LoadquizComponent } from './pages/user/loadquiz/loadquiz.component';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
+    MatProgressSpinnerModule,
     CommonModule,
     FormsModule,
     MatSnackBarModule,
@@ -94,6 +101,10 @@ import { LoadquizComponent } from './pages/user/loadquiz/loadquiz.component';
     MatSlideToggleModule,
     MatCheckboxModule,
     MatSelectModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true,
+    }),
   ],
   providers: [
     provideClientHydration(withEventReplay()),
